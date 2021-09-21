@@ -38,6 +38,7 @@ jobs:
         run: |
           cd ${{ env.LIBRARY_PATH }}
           ./gradlew build publish
+          ./gradlew --stop
         env:
           PUBLISH_PATH: ${{ env.workspace }}/app
 
