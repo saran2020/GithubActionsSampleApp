@@ -51,4 +51,4 @@ jobs:
           git push origin ${{ env.BARNCH }}
           gh pr create --fill
         env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
