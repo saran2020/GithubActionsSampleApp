@@ -1,7 +1,7 @@
 name: Pull and build
 on:
   repository_dispatch:
-    [ publish ]
+    types: [ publish ]
 
 jobs:
   publish-to-local-maven:
