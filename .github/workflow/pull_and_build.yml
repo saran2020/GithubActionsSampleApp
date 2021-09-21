@@ -1,0 +1,52 @@
+name: Pull and build
+on: repository_dispatch
+
+jobs:
+  publish-to-local-maven:
+    name: Pull and build
+    runs-on: ubuntu-latest
+    env:
+      BARNCH: library/new-version
+      APP_PATH: app/
+      LIBRARY_PATH: library/
+
+    steps:
+      - name: Set env
+        run: echo "workspace=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+
+      - name: Checkout app
+        uses: actions/checkout@v2
+        with:
+          path: ${{ env.APP_PATH }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Checkout library
+        uses: actions/checkout@v2
+        with:
+          repository: saran2020/GithubActionsSample
+          path: ${{ env.LIBRARY_PATH }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Change Branch
+        run: |
+          cd ${{ env.APP_PATH }}
+          git checkout -b ${{ env.BARNCH }}
+
+      - name: Build & Publish
+        run: |
+          cd ${{ env.LIBRARY_PATH }}
+          ./gradlew build publish
+        env:
+          PUBLISH_PATH: ${{ env.workspace }}/app
+
+      - name: Raise PR
+        run: |
+          cd ${{ env.APP_PATH }}
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Added a new version of library"
+          git push origin ${{ env.BARNCH }}
+          gh pr create --fill
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
