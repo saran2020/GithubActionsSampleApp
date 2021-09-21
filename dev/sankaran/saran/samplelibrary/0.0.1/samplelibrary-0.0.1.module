@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.sankaran.saran",
+    "module": "samplelibrary",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.30"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "samplelibrary-0.0.1.jar",
+          "url": "samplelibrary-0.0.1.jar",
+          "size": 1454,
+          "sha512": "90db5237069ee032428defde3640e470cad684b51a5b83eebf6e39b7abca315df72935644137fe899a648165524dc6420ea3fa3b5a0426b6ef41be1ea04be860",
+          "sha256": "bafb375ab35366d34037536bb9f73df407d736fde446fbd88f239064659c71e0",
+          "sha1": "0d672c2211eac8cb2b700895128b4fde28ccead1",
+          "md5": "113c618c9a8e0387e165d9c5c051557f"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.30"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "samplelibrary-0.0.1.jar",
+          "url": "samplelibrary-0.0.1.jar",
+          "size": 1454,
+          "sha512": "90db5237069ee032428defde3640e470cad684b51a5b83eebf6e39b7abca315df72935644137fe899a648165524dc6420ea3fa3b5a0426b6ef41be1ea04be860",
+          "sha256": "bafb375ab35366d34037536bb9f73df407d736fde446fbd88f239064659c71e0",
+          "sha1": "0d672c2211eac8cb2b700895128b4fde28ccead1",
+          "md5": "113c618c9a8e0387e165d9c5c051557f"
+        }
+      ]
+    }
+  ]
+}
