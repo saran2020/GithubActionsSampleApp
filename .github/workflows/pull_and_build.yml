@@ -26,7 +26,6 @@ jobs:
         with:
           repository: saran2020/GithubActionsSample
           path: ${{ env.LIBRARY_PATH }}
-#          token: ${{ secrets.GH_TOKEN }}
 
       - name: Change Branch
         run: |
